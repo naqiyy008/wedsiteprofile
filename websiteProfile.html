@@ -1,12 +1,107 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="id">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>websiteprofile</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-</head>
-<body class="bg-gradient-to-br from-gray-900 to-gray-700 text-white font-sans min-h-screen">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Profil Neon - Tema Elegan</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
     
+    .neon-blue {
+      box-shadow: 0 0 10px #00f7ff, 0 0 20px #00f7ff;
+      border: 1px solid #00f7ff;
+    }
+
+    .neon-pink {
+      box-shadow: 0 0 10px #ff69b4, 0 0 20px #ff69b4;
+      border: 1px solid #ff69b4;
+    }
+
+    
+    .fade-in {
+      opacity: 0;
+      transform: translateY(20px);
+      animation: fadeIn 1s ease-out forwards;
+    }
+
+    @keyframes fadeIn {
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+  </style>
+</head>
+<body id="body" class="bg-black text-white font-sans min-h-screen px-4 py-10 transition-colors duration-500">
+
+  <div class="flex justify-end mb-6">
+    <button onclick="toggleTheme()" class="px-4 py-2 bg-cyan-500 text-white rounded-full hover:bg-cyan-600 transition">
+      Ganti Tema 🌗
+    </button>
+  </div>
+
+  <div id="judul-card" class="fade-in bg-black text-white neon-blue rounded-xl p-6 text-center mb-10 max-w-3xl mx-auto">
+    <h1 id="judul" class="text-4xl font-bold">🌟 ABOUT KITAA</h1>
+  </div>
+
+  <div class="grid grid-cols-1 md:grid-cols-2 gap-8 w-full max-w-5xl mx-auto">
+
+    <div id="card1" class="fade-in neon-blue rounded-xl p-6 bg-black text-white text-center">
+      <img src="IMG-20250706-WA0017.jpg" alt="Foto Naqiyyah" class="rounded-full mb-4 border-4 border-cyan-400 mx-auto" />
+      <h2 class="text-2xl font-bold text-cyan-300">Naqiyyah Arlyn Aprillia Saputri</h2>
+      <p class="text-sm text-gray-400 mb-2">Kelas: XI RPL 2</p>
+      <p class="text-gray-300">
+       Saya adalah seorang siswi di SMKN 1 Probolinggo yang memiliki minat luas dalam berbagai bidang, seperti menari, menyanyi, olahraga, dan aktivitas kreatif lainnya. Di sekolah ini, saya memilih jurusan Rekayasa Perangkat Lunak karena saya ingin mengasah kemampuan dalam dunia pemrograman dan pengembangan software. Saya percaya bahwa teknologi dapat menjadi alat yang luar biasa untuk membantu banyak orang. Oleh karena itu, saya bercita-cita menjadi seorang trader di bidang software—membangun aplikasi yang tidak hanya inovatif, tetapi juga bermanfaat bagi kehidupan sehari-hari masyarakat luas.
+      </p>
+    </div>
+
+    <div id="card2" class="fade-in neon-pink rounded-xl p-6 bg-black text-white text-center">
+      <img src="WhatsApp Image 2025-07-23 at 12.37.07_c4e78da1.jpg" alt="Foto Ghefira" class="rounded-full mb-4 border-4 border-pink-400 mx-auto" />
+      <h2 class="text-2xl font-bold text-pink-300">Ghefira Nuris Shobah</h2>
+      <p class="text-sm text-gray-400 mb-2">Kelas: XI RPL 2</p>
+      <p class="text-gray-300">
+       Hai! perkenalkan saya Ghefira Nuris Shobah, seorang siswi dari jurusan Rekayasa Perangkat Lunak yang bersekolah di SMKN 1 Probolinggo. Umur saya saat ini 17 tahun. Saya tinggal di Jl. Cokroaminoto Gg. Cemara No. 20. Setelah lulus SMK, saya memiliki rencana untuk melanjutkan kuliah. Cita-cita saya adalah ingin menjadi seorang guru Bahasa Inggris. Hal yang membuat saya bercita-cita seperti itu ialah, karena saya tertarik pada mata pelajaran bahasa Inggris, keinginan saya untuk menjadi guru bahasa Inggris telah ada sejak saya masih duduk di bangku SD. Untuk meraihnya, saya telah mengikuti beberapa kursus online di bidang tersebut, dan melatih skill saya agar meningkat. Semoga kedepannya saya bisa terus meraih cita-cita saya, dan tidak berhenti di tengah jalan
+      </p>
+    </div>
+
+  </div>
+
+  <script>
+    function toggleTheme() {
+      const body = document.getElementById('body');
+      const card1 = document.getElementById('card1');
+      const card2 = document.getElementById('card2');
+      const judulCard = document.getElementById('judul-card');
+      const judul = document.getElementById('judul');
+      const subjudul = document.getElementById('subjudul');
+
+      if (body.classList.contains('bg-black')) {
+
+        body.classList.replace('bg-black', 'bg-white');
+        body.classList.replace('text-white', 'text-black');
+        card1.classList.replace('bg-black', 'bg-white');
+        card1.classList.replace('text-white', 'text-black');
+        card2.classList.replace('bg-black', 'bg-white');
+        card2.classList.replace('text-white', 'text-black');
+        judulCard.classList.replace('bg-black', 'bg-white');
+        judulCard.classList.replace('text-white', 'text-black');
+        judul.classList.replace('text-cyan-400', 'text-cyan-600');
+        subjudul.classList.replace('text-gray-300', 'text-gray-600');
+      } else {
+
+        body.classList.replace('bg-white', 'bg-black');
+        body.classList.replace('text-black', 'text-white');
+        card1.classList.replace('bg-white', 'bg-black');
+        card1.classList.replace('text-black', 'text-white');
+        card2.classList.replace('bg-white', 'bg-black');
+        card2.classList.replace('text-black', 'text-white');
+        judulCard.classList.replace('bg-white', 'bg-black');
+        judulCard.classList.replace('text-black', 'text-white');
+        judul.classList.replace('text-cyan-600', 'text-cyan-400');
+        subjudul.classList.replace('text-gray-600', 'text-gray-300');
+      }
+    }
+  </script>
+
 </body>
 </html>
